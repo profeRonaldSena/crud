@@ -1,5 +1,6 @@
 'use client'
 import { useTasks } from '@/context/TaskContext'
+import TaskCard from '@/components/TaskCard'
 
 function Home() {
  const { tasks } = useTasks()
@@ -10,12 +11,7 @@ function Home() {
    <h1>HOME</h1>
    <div>
     {tasks.map((task) => (
-     <div key={task.id}>
-      <h1>
-       {task.id} {task.title}
-      </h1>
-      <p>{task.description}</p>
-     </div>
+     <TaskCard task={task} key={task.id} />
     ))}
    </div>
   </>
